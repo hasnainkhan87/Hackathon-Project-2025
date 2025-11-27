@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap");
+@import "tailwindcss";
+
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at 20% 30%, #0f172a, #000000 80%);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.meku-theme {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, hsl(213, 62%, 63%), #a78bfa);
+  background: linear-gradient(90deg, hsl(213, 62%, 63%), #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.tags span {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: #d1d5db;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.tags span:hover {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  transform: scale(1.05);
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 700px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  z-index: 200;
+}
+
+.input-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.75rem 1rem;
+}
+
+.input-box button {
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.input-box button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  cursor: pointer;
+}
+
+.error-text {
+  color: #f87171;
+  margin-top: 1rem;
+}
+
+.model-chat-layout {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  height: calc(100vh - 100px);
+  width: 90%;
+}
+
+.model-chat-layout > div {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+/* ========== HOME GRID ========== */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.home-grid-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.molecule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.molecule-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+}
+
+.molecule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.3);
+}
+
+.molecule-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.molecule-card:hover .molecule-thumb {
+  transform: scale(1.08);
+}
+
+.molecule-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.85));
+  color: #e2e8f0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+
+
+/* ========== SIDEBAR (LEFT) ========== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  box-shadow: 4px 0 25px rgba(99, 102, 241, 0.15);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transform: translateX(-100%); /* hidden by default */
+}
+
+/* Sidebar Menu Button Glow Effect */
+.menu-btn {
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 10px rgba(59, 130, 246, 0.4);
+  cursor: pointer;
+}
+
+/* Push main content slightly right when sidebar open (optional smooth effect) */
+.sidebar-open {
+  transform: translateX(10rem);
+  transition: transform 0.4s ease;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+
+
+/* ========== ChatBox ========== */
+.chat-box::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.chat-box {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* react-split gutter styling */
+.gutter {
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  margin-top: 1.5rem;
+  width: 8px;
+  cursor: col-resize;
+  z-index: 40;
+}
+.gutter:hover {
+  background-color: rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 8px rgba(99,102,241,0.08);
+}
+
+/* make sure left collapsed slim column is clickable */
+.minimized-column {
+  width: 8px;
+  min-width: 8px;
+  max-width: 12px;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;             /* Firefox */
+  scrollbar-color: #555 rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+
+/* Smooth scroll like LN */
+html {
+  scroll-behavior: smooth;
+}
+
+/* LN-style shadows */
+.shadow-heavy {
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+/* gentle hero spacing and fonts */
+#landing-3d h1 {
+  /* keep metrics crisp for LN-like bold heading */
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* subtle dark card for canvas fallback */
+canvas { display: block; }
+
+/* scroll indicator hover */
+#landing-3d a[aria-label="Scroll to content"]:hover .text-xs {
+  color: #fff;
+}
+
+
+/* base hero fonts */
+#landing-variant-a h1,
+#landing-variant-b h1,
+#landing-variant-c h1 {
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+/* ensure canvas fills its container */
+canvas { display: block; }
+
+/* optional: subtle responsive tweaks */
+@media (max-width: 768px) {
+  #landing-variant-b .diagonal-mask { clip-path: none; border-radius: 12px; }
+}
+
+/* scroll indicator style (if you re-add one) */
+.scroll-indicator {
+  width: 40px; height: 40px; border-radius: 999px; background: rgba(255,255,255,0.05);
+  display:flex;align-items:center;justify-content:center;
+}
+
+
+/* Pinterest-style Masonry Grid */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1.75rem;
+}
+
+.masonry-grid > div {
+  break-inside: avoid;
+  margin-bottom: 1.75rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+
+/* smoother clip-path animation */
+* {
+  clip-path: border-box;
+  will-change: clip-path;
+}
+
+/* prevent wipe jitter */
+html, body {
+  overflow-x: hidden;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.mask-gradient-fade {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+
+/* SIMPLE MODERN BURGER ANIMATION */
+.burger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 4px;
+}
+
+.burger-line {
+  width: 26px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 6px;
+  transition: 0.25s ease;
+}
+
+/* Hover animation */
+.burger-btn:hover .burger-line:nth-child(1) {
+  transform: translateY(-2px);
+}
+
+.burger-btn:hover .burger-line:nth-child(3) {
+  transform: translateY(2px);
+}
+
+.burger-btn:hover .burger-line:nth-child(2) {
+  width: 18px;
+  opacity: 0.7;
+}
