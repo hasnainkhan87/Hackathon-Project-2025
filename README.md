@@ -355,3 +355,15 @@ You have fully configured Moleculens.
 Start generating molecules, exploring structures, and chatting with AI chemistry.
 
 ---
+
+## 👥 Contributors
+
+| Name | Role |
+|-------|-------|
+| **Chinmay P Kulkarni** | Project Lead |
+| **Abhinav D Shetty** | Full-stack Developer |
+| **Hasnain Khan** | Frontend & UI/UX |
+| **Prakyath Suvarnna** | Backend Integrations & Testing |
+
+> Built collaboratively during the Internal Hackathon 2025, securing **3rd Place 🥉** at <HACKLOOP S04 (at NMAMIT)>.
+
